@@ -1,5 +1,5 @@
 import { gql, useQuery } from "@apollo/client"
-import { Tech } from "../Tech"
+import { TechsList } from "../TechsList"
 
 const GET_TECH_QUERY = gql`
     query MyQuery {
@@ -53,7 +53,7 @@ export function About() {
             </strong>
             <div className="pt-3 flex gap-3 flex-wrap">
                 {data?.techs.map((tech, key) => (
-                        <Tech 
+                        <TechsList 
                             key={key}
                             title={tech.title}
                             knowledge={tech.knowledge}
