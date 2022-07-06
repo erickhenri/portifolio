@@ -1,7 +1,7 @@
 import { gql, useQuery } from "@apollo/client"
 import { Link } from "react-router-dom"
 
-const GET_SLUG_REPOSITORIES = gql `
+const GET_REPOSITORIES_QUERY = gql `
     query {
         repositories {
             title
@@ -18,7 +18,7 @@ interface RepositoriesProps {
 }
 
 export function Repositories() {
-    const { data } = useQuery<RepositoriesProps>(GET_SLUG_REPOSITORIES)
+    const { data } = useQuery<RepositoriesProps>(GET_REPOSITORIES_QUERY)
     console.log(data)
 
     return (
@@ -27,8 +27,8 @@ export function Repositories() {
                 Repositórios
             </h1>
 
-            {data?.repositories.map( (repository) => (
-                <div className="">
+            {data?.repositories.map( (repository, key) => (
+                <div key={key} className="">
                     <Link to={repository.slug}>
                         {repository.title}
                     </Link>
