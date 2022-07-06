@@ -1,4 +1,37 @@
+import { gql, useQuery } from "@apollo/client"
+import { Tech } from "../Tech"
+
+const GET_TECH_QUERY = gql`
+    query MyQuery {
+        techs {
+            title
+            knowledge
+            icon {
+                url
+            }
+            repositories {
+                title
+            }
+        }
+    }
+`
+interface getTechQueryResponse {
+    techs: {
+        title: string,
+        knowledge: string,
+        icon: {
+            url: string
+        },
+        repositories: {
+            title: string
+        },
+    }[]
+}
+
+
 export function About() {
+    const { data } = useQuery<getTechQueryResponse>(GET_TECH_QUERY)
+
     return (
         <div>
             <h1 className="text-4xl font-semibold ">
@@ -18,6 +51,18 @@ export function About() {
             <strong className="text-blue-700 font-semibold">
                 Linguagens e Tecnologias
             </strong>
+            <div className="pt-3 flex gap-3">
+                {data?.techs.map((tech, key) => (
+                        <Tech 
+                            key={key}
+                            title={tech.title}
+                            knowledge={tech.knowledge}
+                            icon={tech.icon}
+                            repositories={tech.repositories}
+
+                        />
+                    ))}
+            </div>
 
         </div>
     )
