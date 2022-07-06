@@ -51,7 +51,7 @@ export function About() {
             <strong className="text-blue-700 font-semibold">
                 Linguagens e Tecnologias
             </strong>
-            <div className="pt-3 flex gap-3">
+            <div className="pt-3 flex gap-3 flex-wrap">
                 {data?.techs.map((tech, key) => (
                         <Tech 
                             key={key}
