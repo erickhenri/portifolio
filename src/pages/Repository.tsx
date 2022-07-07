@@ -59,20 +59,20 @@ export function Repository() {
     })
 
     return (
-        <div className="flex flex-col min-h-screen text-white">
+        <div className="dark:text-white flex flex-col min-h-screen">
             <button type="button" onClick={() => history.back()}>
-                <ArrowLeft size={48} className="fixed left-4 top-4 p-2 bg-blue-900 bg-opacity-80 rounded-full hover:bg-opacity-100 transition-opacity cursor-pointer"/>
+                <ArrowLeft size={48} className="fixed left-4 top-4 p-2 bg-slate-400 dark:bg-blue-900 bg-opacity-80 rounded-full hover:bg-opacity-100 transition-opacity cursor-pointer"/>
             </button>
             
 
-            <header className="py-8 w-screen bg-gray-700 flex flex-col items-center gap-6 shadow-xl">
+            <header className="py-8 md:py-12 w-screen bg-slate-300 dark:bg-gray-700 flex flex-col items-center gap-6 md:gap-8 shadow-xl">
                 <img src={data?.repository.icon.url} alt="" className="w-28 rounded-xl" />
                 <h1 className=" text-4xl font-medium">
                     {data?.repository.title}
                 </h1>
             </header>
 
-            <div className="py-4 px-6 bg-gray-800 flex-1 flex flex-col gap-4">
+            <div className="py-4 px-6 bg-slate-100 dark:bg-gray-800 flex-1 flex flex-col gap-4">
                 <div className="flex gap-4">
                     {data?.repository.techs.map(({icon}) => (
                         <img src={icon.url} alt="" className="w-8"/>
@@ -80,7 +80,7 @@ export function Repository() {
                 </div>
                 
                 <section>
-                    <h2 className="mb-3 pb-1 text-xl font-medium border-b border-white border-opacity-50">
+                    <h2 className="mb-3 pb-1 text-xl font-medium border-b border-blue-900 border-opacity-50 dark:border-white dark:border-opacity-50">
                         Sobre
                     </h2>
                     <p>{data?.repository.about}</p>
@@ -88,7 +88,7 @@ export function Repository() {
 
                 {data?.repository.desktopSite && (
                     <section>
-                        <h2 className="mb-4 pb-1 text-xl font-medium border-b border-white border-opacity-50">
+                        <h2 className="mb-4 pb-1 text-xl font-medium border-b border-blue-900 border-opacity-50 dark:border-white dark:border-opacity-50">
                             Versão Desktop
                         </h2>
                         <div className="flex justify-center">
@@ -101,7 +101,7 @@ export function Repository() {
 
                 {data?.repository.mobileSite && (
                     <section>
-                        <h2 className="mb-4 pb-1 text-xl font-medium border-b border-white border-opacity-50">
+                        <h2 className="mb-4 pb-1 text-xl font-medium border-b border-blue-900 border-opacity-50 dark:border-white dark:border-opacity-50">
                             Versão Mobile
                         </h2>
                         <div className="flex justify-center">

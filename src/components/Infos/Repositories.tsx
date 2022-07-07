@@ -4,7 +4,6 @@ import { RepositoryButton } from "../RepositoryButton"
 const GET_REPOSITORIES_QUERY = gql `
     query {
         repositories {
-            title
             slug
         }
     }  
@@ -19,20 +18,21 @@ interface RepositoriesProps {
 
 export function Repositories() {
     const { data } = useQuery<RepositoriesProps>(GET_REPOSITORIES_QUERY)
-    console.log(data)
 
     return (
-        <div className=" flex flex-col items-center">
-            <h1 className="text-4xl font-normal">
+        <div className="flex flex-col items-center">
+            <h1 className="mb-3 text-4xl font-normal">
                 Repositórios
             </h1>
-
-            {data?.repositories.map( (repository, key) => (
-                <RepositoryButton 
+            
+            <div className="w-full border-t border-blue-900 border-opacity-50 dark:border-white dark:border-opacity-50">
+                {data?.repositories.map( (repository, key) => (
+                    <RepositoryButton 
+                    key={key}
                     slug={repository.slug}
-                    title={repository.title}
-                />
-            ))}
+                    />
+                    ))}
+            </div>
         </div>
     )
 }
