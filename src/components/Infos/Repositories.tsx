@@ -1,5 +1,5 @@
 import { gql, useQuery } from "@apollo/client"
-import { Link } from "react-router-dom"
+import { RepositoryButton } from "../RepositoryButton"
 
 const GET_REPOSITORIES_QUERY = gql `
     query {
@@ -28,11 +28,10 @@ export function Repositories() {
             </h1>
 
             {data?.repositories.map( (repository, key) => (
-                <div key={key} className="">
-                    <Link to={repository.slug}>
-                        {repository.title}
-                    </Link>
-                </div>
+                <RepositoryButton 
+                    slug={repository.slug}
+                    title={repository.title}
+                />
             ))}
         </div>
     )

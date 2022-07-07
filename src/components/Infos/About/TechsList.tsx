@@ -29,13 +29,15 @@ export function TechsList() {
     return (
         <div className="pt-3 flex gap-3 flex-wrap">
             {data?.techs.map((tech, key) => (
-                <Link to={`tech/${tech.slug}`} key={key}>
-                    <button className="p-2 flex flex-col flex-1 items-center rounded shadow-[0px_0px_3px_1px_rgba(100,116,139,0.5)] hover:scale-105 transition-transform">
-                        <img src={tech.icon.url} alt="" className="w-8 mx-4"/>
-                        <strong className="font-semibold">
-                            {tech.title}
-                        </strong>
-                    </button>
+                <Link 
+                    className="p-2 flex flex-col flex-auto items-center rounded shadow-[0px_0px_3px_1px_rgba(100,116,139,0.5)] hover:scale-105 transition-transform"
+                    to={`tech/${tech.slug}`} 
+                    key={key} 
+                >
+                    <img src={tech.icon.url} alt="" className="w-8 mx-2"/>
+                    <strong className="font-semibold">
+                        {tech.title}
+                    </strong>
                 </Link>
             ))
             }

@@ -1,4 +1,4 @@
-import { TechsList } from "../TechsList"
+import { TechsList } from "./TechsList"
 
 export function About() {
 
@@ -21,7 +21,6 @@ export function About() {
             <strong className="text-blue-700 font-semibold">
                 Linguagens e Tecnologias
             </strong>
-
             <TechsList />
         </div>
     )
