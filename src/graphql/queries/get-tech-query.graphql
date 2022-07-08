@@ -1,0 +1,12 @@
+query GetTech($slug: String) {
+  tech(where: {slug: $slug}) {
+    title
+    knowledge
+    icon {
+        url
+    }
+    repositories {
+        slug
+    }
+  }
+}

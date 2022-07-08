@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Error404 } from "./components/Error404";
 import { About } from "./components/Infos/About/About";
 import { Contact } from "./components/Infos/Contact";
 import { Repositories } from "./components/Infos/Repositories";
@@ -18,6 +19,7 @@ export function Router(props: { changeTheme : () => void, themeDarkOn : Boolean 
                 </Route>
                 <Route path="/about/tech/:slug" element={<Tech />}/>
                 <Route path="/repositories/:slug" element={<Repository />}/>
+                <Route path="*" element={<Error404 />}/>
             </Routes>
         </BrowserRouter>
     )

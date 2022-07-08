@@ -1,23 +1,8 @@
-import { gql, useQuery } from "@apollo/client"
+import { useGetSlugRepositoriesQuery } from "../../graphql/genereted"
 import { RepositoryButton } from "../RepositoryButton"
 
-const GET_REPOSITORIES_QUERY = gql `
-    query {
-        repositories {
-            slug
-        }
-    }  
-`
-
-interface RepositoriesProps {
-    repositories: {
-        title: string
-        slug: string
-    }[]
-}
-
 export function Repositories() {
-    const { data } = useQuery<RepositoriesProps>(GET_REPOSITORIES_QUERY)
+    const { data } = useGetSlugRepositoriesQuery()
 
     return (
         <div className="flex flex-col items-center">

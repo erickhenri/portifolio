@@ -1,0 +1,9 @@
+query  GetTechs{
+    techs {
+        title
+        slug
+        icon {
+            url
+        }
+    }
+}

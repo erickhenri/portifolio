@@ -1,0 +1,21 @@
+query GetRepository($slug: String) {
+    repository(where: {slug: $slug}) {
+        title
+        slug
+        about
+        icon {
+            url
+        }
+        desktopSite {
+            url
+        }
+        mobileSite {
+            url
+        }
+        techs {
+            icon {
+                url
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+query GetTitlesRepository($slug: String) {
+    repository(where: {slug: $slug}) {
+        title
+        techs {
+            title
+        }
+    }
+}
