@@ -13,7 +13,7 @@ export function Repository() {
     })
 
     return (
-        <div className="dark:text-white flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen">
             <button type="button" onClick={() => history.back()}>
                 <ArrowLeft size={48} className="fixed left-4 top-4 p-2 bg-slate-400 dark:bg-blue-900 bg-opacity-80 rounded-full hover:bg-opacity-100 transition-opacity cursor-pointer"/>
             </button>

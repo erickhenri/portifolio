@@ -6,12 +6,24 @@ import { Footer } from "../components/Footer";
 import { Menu } from "../components/Menu";
 
 import Character from '../assets/character.png';
+import { ApplyTheme } from "../components/ApplyTheme";
 
-export function Home(props: { changeTheme: () => void, themeDarkOn : Boolean }) {
+export function Home() {
 	const [menuOpen, setMenuOpen] = useState(false);
 
+	function ChangeTheme() {
+		if(localStorage.theme === "light") {
+			localStorage.theme = "dark";
+		}
+		else {
+			localStorage.theme = "light";
+		}
+
+		ApplyTheme()
+	}
+
 	return (
-		<div className="dark:text-white min-h-screen flex flex-col items-center md:flex-row md:justify-between bg-lightMain bg-cover bg-no-repeat dark:bg-darkMain dark:bg-center transition-all duration-[400ms]">
+		<div className="min-h-screen flex flex-col items-center md:flex-row md:justify-between bg-lightMain bg-cover bg-no-repeat dark:bg-darkMain dark:bg-center transition-all duration-[400ms]">
 			<header className="fixed top-0 px-5 md:p-0 h-14 md:h-0 bg-blue-800 bg-opacity-30 dark:bg-opacity-80 w-full flex justify-between items-center">
 				<List
 					className="md:hidden" 
@@ -19,18 +31,16 @@ export function Home(props: { changeTheme: () => void, themeDarkOn : Boolean }) 
 					onClick={() => setMenuOpen(true)}
 				/>
 				
-				{props.themeDarkOn
-					? <Moon 
-						className="md:cursor-pointer md:absolute md:top-8 md:right-8 text-blue-500"
-						size={32} 
-						onClick={props.changeTheme} 
-						/>
-					: <Sun 
-						className="md:cursor-pointer md:absolute md:top-8 md:right-8 text-yellow-600"
-						size={32} 
-						onClick={props.changeTheme} 
-						/>
-				}
+				<Moon 
+					className="hidden dark:block md:cursor-pointer md:absolute md:top-8 md:right-8 text-blue-500"
+					size={32} 
+					onClick={ChangeTheme} 
+					/>
+				<Sun 
+					className="dark:hidden md:cursor-pointer md:absolute md:top-8 md:right-8 text-yellow-600"
+					size={32} 
+					onClick={ChangeTheme} 
+					/>
 			</header>
 			
 			<Menu 

@@ -7,11 +7,11 @@ import { Home } from "./pages/Home";
 import { Repository } from "./pages/Repository";
 import { Tech } from "./pages/Tech";
 
-export function Router(props: { changeTheme : () => void, themeDarkOn : Boolean }) {
+export function Router() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home changeTheme={props.changeTheme} themeDarkOn={props.themeDarkOn}/>}>
+                <Route path="/" element={<Home />}>
                     <Route path="" element={<About />}/>
                     <Route path="about" element={<About />}/>
                     <Route path="repositories" element={<Repositories />}/>

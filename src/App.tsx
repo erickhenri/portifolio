@@ -1,19 +1,14 @@
 import { ApolloProvider } from "@apollo/client";
-import { useState } from "react";
+import { ApplyTheme } from "./components/ApplyTheme";
 import { client } from "./lib/apollo";
 import { Router } from "./Router";
 
 export function App() {
-	const [themeDarkOn, setThemeDarkOn] = useState(false);
-
-	function changeTheme() {
-		setThemeDarkOn(() => !themeDarkOn)
-	}
-
+	ApplyTheme()
 	return (
 		<ApolloProvider client={client}>
-			<div className={`${themeDarkOn?"dark":""} text-blue-900`}>
-				<Router changeTheme={changeTheme} themeDarkOn={themeDarkOn}/>
+			<div className={`text-blue-900 dark:text-white`}>
+				<Router/>
 			</div>
 		</ApolloProvider>
 	)

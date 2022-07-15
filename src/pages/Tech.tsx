@@ -41,7 +41,7 @@ export function Tech() {
     })
 
     return (
-        <div className="flex flex-col min-h-screen dark:text-white">
+        <div className="flex flex-col min-h-screen">
             <button type="button" onClick={() => history.back()}>
                 <ArrowLeft className="fixed left-4 top-4 w-8 h-8 md:w-12 md:h-12 p-1 md:p-2 bg-slate-400 dark:bg-blue-900 bg-opacity-80 rounded-full hover:bg-opacity-100 transition-opacity cursor-pointer"/>
             </button>            

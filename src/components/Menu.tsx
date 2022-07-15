@@ -7,7 +7,6 @@ interface menuProps {
 
 export function Menu(props: menuProps) {
     const { pathname } = useLocation();
-    console.log(pathname)
 
     return (
         <div className={`${props.menuOpen?"-translate-y-0":"-translate-y-full"} md:static md:translate-y-0 fixed md:ml-20 text-center h-screen w-screen md:w-auto md:h-auto bg-white md:bg-transparent flex flex-col items-center justify-center transition-transform duration-[400ms]`}>
