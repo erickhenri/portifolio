@@ -2,7 +2,11 @@ query GetRepository($slug: String) {
     repository(where: {slug: $slug}) {
         title
         slug
-        about
+        about {
+            githubLink
+            siteLink
+            description            
+        }
         icon {
             url
         }

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useGetTitlesRepositoryQuery } from "../graphql/genereted";
+import { useGetTitlesRepositoryQuery } from "~/graphql/genereted";
 
 interface RepositoryButtonProps {
     slug: string

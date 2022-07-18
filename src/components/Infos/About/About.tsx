@@ -15,7 +15,7 @@ export function About() {
                 Sobre
             </strong>
             <p className="mb-3">
-                Eu tenho 18 anos. Sou formado no curso de técnico em informática pelo IFMA, iniciei meus estudos de programação web em julho de 2021 e desde então sigo estudando em buscar da minha primeira oportunidade de emprego na área.
+                Eu tenho 18 anos. Sou formado no curso de técnico em informática pelo IFMA, iniciei meus estudos de programação web em julho de 2021 e desde então sigo estudando.
             </p>
 
             <strong className="text-blue-700 font-semibold">

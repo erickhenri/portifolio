@@ -1,5 +1,5 @@
-import { useGetSlugRepositoriesQuery } from "../../graphql/genereted"
-import { RepositoryButton } from "../RepositoryButton"
+import { useGetSlugRepositoriesQuery } from "~/graphql/genereted"
+import { RepositoryButton } from "~/components/RepositoryButton"
 
 export function Repositories() {
     const { data } = useGetSlugRepositoriesQuery()

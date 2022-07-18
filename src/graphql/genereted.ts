@@ -23,6 +23,418 @@ export type Scalars = {
   RichTextAST: any;
 };
 
+export type AboutRepository = {
+  __typename?: 'AboutRepository';
+  description?: Maybe<Scalars['String']>;
+  githubLink?: Maybe<Scalars['String']>;
+  /** The unique identifier */
+  id: Scalars['ID'];
+  siteLink?: Maybe<Scalars['String']>;
+  /** System stage field */
+  stage: Stage;
+};
+
+export type AboutRepositoryConnectInput = {
+  /** Allow to specify document position in list of connected documents, will default to appending at end of list */
+  position?: InputMaybe<ConnectPositionInput>;
+  /** Document to connect */
+  where: AboutRepositoryWhereUniqueInput;
+};
+
+/** A connection to a list of items. */
+export type AboutRepositoryConnection = {
+  __typename?: 'AboutRepositoryConnection';
+  aggregate: Aggregate;
+  /** A list of edges. */
+  edges: Array<AboutRepositoryEdge>;
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+};
+
+export type AboutRepositoryCreateInput = {
+  description?: InputMaybe<Scalars['String']>;
+  githubLink?: InputMaybe<Scalars['String']>;
+  siteLink?: InputMaybe<Scalars['String']>;
+};
+
+export type AboutRepositoryCreateManyInlineInput = {
+  /** Create and connect multiple existing AboutRepository documents */
+  create?: InputMaybe<Array<AboutRepositoryCreateInput>>;
+};
+
+export type AboutRepositoryCreateOneInlineInput = {
+  /** Create and connect one AboutRepository document */
+  create?: InputMaybe<AboutRepositoryCreateInput>;
+};
+
+export type AboutRepositoryCreateWithPositionInput = {
+  /** Document to create */
+  data: AboutRepositoryCreateInput;
+  /** Position in the list of existing component instances, will default to appending at the end of list */
+  position?: InputMaybe<ConnectPositionInput>;
+};
+
+/** An edge in a connection. */
+export type AboutRepositoryEdge = {
+  __typename?: 'AboutRepositoryEdge';
+  /** A cursor for use in pagination. */
+  cursor: Scalars['String'];
+  /** The item at the end of the edge. */
+  node: AboutRepository;
+};
+
+/** Identifies documents */
+export type AboutRepositoryManyWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<AboutRepositoryWhereInput>>;
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<AboutRepositoryWhereInput>>;
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<AboutRepositoryWhereInput>>;
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']>;
+  description?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  description_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  description_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  description_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  description_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  description_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  description_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  description_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  description_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  description_starts_with?: InputMaybe<Scalars['String']>;
+  githubLink?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  githubLink_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  githubLink_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  githubLink_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  githubLink_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  githubLink_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  githubLink_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  githubLink_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  githubLink_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  githubLink_starts_with?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['ID']>;
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']>;
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']>;
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<Scalars['ID']>>;
+  /** All values that are not equal to given value. */
+  id_not?: InputMaybe<Scalars['ID']>;
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']>;
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']>;
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<Scalars['ID']>>;
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']>;
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']>;
+  siteLink?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  siteLink_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  siteLink_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  siteLink_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  siteLink_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  siteLink_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  siteLink_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  siteLink_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  siteLink_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  siteLink_starts_with?: InputMaybe<Scalars['String']>;
+};
+
+export enum AboutRepositoryOrderByInput {
+  DescriptionAsc = 'description_ASC',
+  DescriptionDesc = 'description_DESC',
+  GithubLinkAsc = 'githubLink_ASC',
+  GithubLinkDesc = 'githubLink_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  SiteLinkAsc = 'siteLink_ASC',
+  SiteLinkDesc = 'siteLink_DESC'
+}
+
+export type AboutRepositoryParent = Repository;
+
+export type AboutRepositoryParentConnectInput = {
+  Repository?: InputMaybe<RepositoryConnectInput>;
+};
+
+export type AboutRepositoryParentCreateInput = {
+  Repository?: InputMaybe<RepositoryCreateInput>;
+};
+
+export type AboutRepositoryParentCreateManyInlineInput = {
+  /** Connect multiple existing AboutRepositoryParent documents */
+  connect?: InputMaybe<Array<AboutRepositoryParentWhereUniqueInput>>;
+  /** Create and connect multiple existing AboutRepositoryParent documents */
+  create?: InputMaybe<Array<AboutRepositoryParentCreateInput>>;
+};
+
+export type AboutRepositoryParentCreateOneInlineInput = {
+  /** Connect one existing AboutRepositoryParent document */
+  connect?: InputMaybe<AboutRepositoryParentWhereUniqueInput>;
+  /** Create and connect one AboutRepositoryParent document */
+  create?: InputMaybe<AboutRepositoryParentCreateInput>;
+};
+
+export type AboutRepositoryParentUpdateInput = {
+  Repository?: InputMaybe<RepositoryUpdateInput>;
+};
+
+export type AboutRepositoryParentUpdateManyInlineInput = {
+  /** Connect multiple existing AboutRepositoryParent documents */
+  connect?: InputMaybe<Array<AboutRepositoryParentConnectInput>>;
+  /** Create and connect multiple AboutRepositoryParent documents */
+  create?: InputMaybe<Array<AboutRepositoryParentCreateInput>>;
+  /** Delete multiple AboutRepositoryParent documents */
+  delete?: InputMaybe<Array<AboutRepositoryParentWhereUniqueInput>>;
+  /** Disconnect multiple AboutRepositoryParent documents */
+  disconnect?: InputMaybe<Array<AboutRepositoryParentWhereUniqueInput>>;
+  /** Override currently-connected documents with multiple existing AboutRepositoryParent documents */
+  set?: InputMaybe<Array<AboutRepositoryParentWhereUniqueInput>>;
+  /** Update multiple AboutRepositoryParent documents */
+  update?: InputMaybe<Array<AboutRepositoryParentUpdateWithNestedWhereUniqueInput>>;
+  /** Upsert multiple AboutRepositoryParent documents */
+  upsert?: InputMaybe<Array<AboutRepositoryParentUpsertWithNestedWhereUniqueInput>>;
+};
+
+export type AboutRepositoryParentUpdateManyWithNestedWhereInput = {
+  Repository?: InputMaybe<RepositoryUpdateManyWithNestedWhereInput>;
+};
+
+export type AboutRepositoryParentUpdateOneInlineInput = {
+  /** Connect existing AboutRepositoryParent document */
+  connect?: InputMaybe<AboutRepositoryParentWhereUniqueInput>;
+  /** Create and connect one AboutRepositoryParent document */
+  create?: InputMaybe<AboutRepositoryParentCreateInput>;
+  /** Delete currently connected AboutRepositoryParent document */
+  delete?: InputMaybe<Scalars['Boolean']>;
+  /** Disconnect currently connected AboutRepositoryParent document */
+  disconnect?: InputMaybe<Scalars['Boolean']>;
+  /** Update single AboutRepositoryParent document */
+  update?: InputMaybe<AboutRepositoryParentUpdateWithNestedWhereUniqueInput>;
+  /** Upsert single AboutRepositoryParent document */
+  upsert?: InputMaybe<AboutRepositoryParentUpsertWithNestedWhereUniqueInput>;
+};
+
+export type AboutRepositoryParentUpdateWithNestedWhereUniqueInput = {
+  Repository?: InputMaybe<RepositoryUpdateWithNestedWhereUniqueInput>;
+};
+
+export type AboutRepositoryParentUpsertWithNestedWhereUniqueInput = {
+  Repository?: InputMaybe<RepositoryUpsertWithNestedWhereUniqueInput>;
+};
+
+export type AboutRepositoryParentWhereInput = {
+  Repository?: InputMaybe<RepositoryWhereInput>;
+};
+
+export type AboutRepositoryParentWhereUniqueInput = {
+  Repository?: InputMaybe<RepositoryWhereUniqueInput>;
+};
+
+export type AboutRepositoryUpdateInput = {
+  description?: InputMaybe<Scalars['String']>;
+  githubLink?: InputMaybe<Scalars['String']>;
+  siteLink?: InputMaybe<Scalars['String']>;
+};
+
+export type AboutRepositoryUpdateManyInlineInput = {
+  /** Create and connect multiple AboutRepository component instances */
+  create?: InputMaybe<Array<AboutRepositoryCreateWithPositionInput>>;
+  /** Delete multiple AboutRepository documents */
+  delete?: InputMaybe<Array<AboutRepositoryWhereUniqueInput>>;
+  /** Update multiple AboutRepository component instances */
+  update?: InputMaybe<Array<AboutRepositoryUpdateWithNestedWhereUniqueAndPositionInput>>;
+  /** Upsert multiple AboutRepository component instances */
+  upsert?: InputMaybe<Array<AboutRepositoryUpsertWithNestedWhereUniqueAndPositionInput>>;
+};
+
+export type AboutRepositoryUpdateManyInput = {
+  description?: InputMaybe<Scalars['String']>;
+  githubLink?: InputMaybe<Scalars['String']>;
+  siteLink?: InputMaybe<Scalars['String']>;
+};
+
+export type AboutRepositoryUpdateManyWithNestedWhereInput = {
+  /** Update many input */
+  data: AboutRepositoryUpdateManyInput;
+  /** Document search */
+  where: AboutRepositoryWhereInput;
+};
+
+export type AboutRepositoryUpdateOneInlineInput = {
+  /** Create and connect one AboutRepository document */
+  create?: InputMaybe<AboutRepositoryCreateInput>;
+  /** Delete currently connected AboutRepository document */
+  delete?: InputMaybe<Scalars['Boolean']>;
+  /** Update single AboutRepository document */
+  update?: InputMaybe<AboutRepositoryUpdateWithNestedWhereUniqueInput>;
+  /** Upsert single AboutRepository document */
+  upsert?: InputMaybe<AboutRepositoryUpsertWithNestedWhereUniqueInput>;
+};
+
+export type AboutRepositoryUpdateWithNestedWhereUniqueAndPositionInput = {
+  /** Document to update */
+  data?: InputMaybe<AboutRepositoryUpdateInput>;
+  /** Position in the list of existing component instances, will default to appending at the end of list */
+  position?: InputMaybe<ConnectPositionInput>;
+  /** Unique component instance search */
+  where: AboutRepositoryWhereUniqueInput;
+};
+
+export type AboutRepositoryUpdateWithNestedWhereUniqueInput = {
+  /** Document to update */
+  data: AboutRepositoryUpdateInput;
+  /** Unique document search */
+  where: AboutRepositoryWhereUniqueInput;
+};
+
+export type AboutRepositoryUpsertInput = {
+  /** Create document if it didn't exist */
+  create: AboutRepositoryCreateInput;
+  /** Update document if it exists */
+  update: AboutRepositoryUpdateInput;
+};
+
+export type AboutRepositoryUpsertWithNestedWhereUniqueAndPositionInput = {
+  /** Document to upsert */
+  data?: InputMaybe<AboutRepositoryUpsertInput>;
+  /** Position in the list of existing component instances, will default to appending at the end of list */
+  position?: InputMaybe<ConnectPositionInput>;
+  /** Unique component instance search */
+  where: AboutRepositoryWhereUniqueInput;
+};
+
+export type AboutRepositoryUpsertWithNestedWhereUniqueInput = {
+  /** Upsert data */
+  data: AboutRepositoryUpsertInput;
+  /** Unique document search */
+  where: AboutRepositoryWhereUniqueInput;
+};
+
+/** Identifies documents */
+export type AboutRepositoryWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<AboutRepositoryWhereInput>>;
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<AboutRepositoryWhereInput>>;
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<AboutRepositoryWhereInput>>;
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']>;
+  description?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  description_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  description_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  description_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  description_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  description_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  description_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  description_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  description_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  description_starts_with?: InputMaybe<Scalars['String']>;
+  githubLink?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  githubLink_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  githubLink_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  githubLink_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  githubLink_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  githubLink_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  githubLink_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  githubLink_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  githubLink_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  githubLink_starts_with?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['ID']>;
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']>;
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']>;
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<Scalars['ID']>>;
+  /** All values that are not equal to given value. */
+  id_not?: InputMaybe<Scalars['ID']>;
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']>;
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']>;
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<Scalars['ID']>>;
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']>;
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']>;
+  siteLink?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  siteLink_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  siteLink_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  siteLink_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  siteLink_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  siteLink_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  siteLink_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  siteLink_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  siteLink_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  siteLink_starts_with?: InputMaybe<Scalars['String']>;
+};
+
+/** References AboutRepository record uniquely */
+export type AboutRepositoryWhereUniqueInput = {
+  id?: InputMaybe<Scalars['ID']>;
+};
+
 export type Aggregate = {
   __typename?: 'Aggregate';
   count: Scalars['Int'];
@@ -1750,7 +2162,7 @@ export type RgbaInput = {
 /** Lista dos repositórios */
 export type Repository = Node & {
   __typename?: 'Repository';
-  about: Scalars['String'];
+  about: AboutRepository;
   /** The time the document was created */
   createdAt: Scalars['DateTime'];
   /** User that created this document */
@@ -1778,6 +2190,12 @@ export type Repository = Node & {
   updatedAt: Scalars['DateTime'];
   /** User that last updated this document */
   updatedBy?: Maybe<User>;
+};
+
+
+/** Lista dos repositórios */
+export type RepositoryAboutArgs = {
+  locales?: InputMaybe<Array<Locale>>;
 };
 
 
@@ -1889,7 +2307,7 @@ export type RepositoryConnection = {
 };
 
 export type RepositoryCreateInput = {
-  about: Scalars['String'];
+  about: AboutRepositoryCreateOneInlineInput;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   desktopSite?: InputMaybe<AssetCreateManyInlineInput>;
   icon?: InputMaybe<AssetCreateOneInlineInput>;
@@ -1933,25 +2351,7 @@ export type RepositoryManyWhereInput = {
   OR?: InputMaybe<Array<RepositoryWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
-  about?: InputMaybe<Scalars['String']>;
-  /** All values containing the given string. */
-  about_contains?: InputMaybe<Scalars['String']>;
-  /** All values ending with the given string. */
-  about_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are contained in given list. */
-  about_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values that are not equal to given value. */
-  about_not?: InputMaybe<Scalars['String']>;
-  /** All values not containing the given string. */
-  about_not_contains?: InputMaybe<Scalars['String']>;
-  /** All values not ending with the given string */
-  about_not_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are not contained in given list. */
-  about_not_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values not starting with the given string. */
-  about_not_starts_with?: InputMaybe<Scalars['String']>;
-  /** All values starting with the given string. */
-  about_starts_with?: InputMaybe<Scalars['String']>;
+  about?: InputMaybe<AboutRepositoryWhereInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   createdAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -2073,8 +2473,6 @@ export type RepositoryManyWhereInput = {
 };
 
 export enum RepositoryOrderByInput {
-  AboutAsc = 'about_ASC',
-  AboutDesc = 'about_DESC',
   CreatedAtAsc = 'createdAt_ASC',
   CreatedAtDesc = 'createdAt_DESC',
   IdAsc = 'id_ASC',
@@ -2090,7 +2488,7 @@ export enum RepositoryOrderByInput {
 }
 
 export type RepositoryUpdateInput = {
-  about?: InputMaybe<Scalars['String']>;
+  about?: InputMaybe<AboutRepositoryUpdateOneInlineInput>;
   desktopSite?: InputMaybe<AssetUpdateManyInlineInput>;
   icon?: InputMaybe<AssetUpdateOneInlineInput>;
   mobileSite?: InputMaybe<AssetUpdateManyInlineInput>;
@@ -2117,7 +2515,8 @@ export type RepositoryUpdateManyInlineInput = {
 };
 
 export type RepositoryUpdateManyInput = {
-  about?: InputMaybe<Scalars['String']>;
+  /** No fields in updateMany data input */
+  _?: InputMaybe<Scalars['String']>;
 };
 
 export type RepositoryUpdateManyWithNestedWhereInput = {
@@ -2173,25 +2572,7 @@ export type RepositoryWhereInput = {
   OR?: InputMaybe<Array<RepositoryWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
-  about?: InputMaybe<Scalars['String']>;
-  /** All values containing the given string. */
-  about_contains?: InputMaybe<Scalars['String']>;
-  /** All values ending with the given string. */
-  about_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are contained in given list. */
-  about_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values that are not equal to given value. */
-  about_not?: InputMaybe<Scalars['String']>;
-  /** All values not containing the given string. */
-  about_not_contains?: InputMaybe<Scalars['String']>;
-  /** All values not ending with the given string */
-  about_not_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are not contained in given list. */
-  about_not_in?: InputMaybe<Array<Scalars['String']>>;
-  /** All values not starting with the given string. */
-  about_not_starts_with?: InputMaybe<Scalars['String']>;
-  /** All values starting with the given string. */
-  about_starts_with?: InputMaybe<Scalars['String']>;
+  about?: InputMaybe<AboutRepositoryWhereInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   createdAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -3346,7 +3727,7 @@ export type Tech = Node & {
   /** List of Tech versions */
   history: Array<Version>;
   /** Icone da tecnologia */
-  icon?: Maybe<Asset>;
+  icon: Asset;
   /** The unique identifier */
   id: Scalars['ID'];
   /** Descrição da tecnologia */
@@ -3361,7 +3742,7 @@ export type Tech = Node & {
   /** System stage field */
   stage: Stage;
   /** Nome da tecnologia */
-  title?: Maybe<Scalars['String']>;
+  title: Scalars['String'];
   /** The time the document was updated */
   updatedAt: Scalars['DateTime'];
   /** User that last updated this document */
@@ -3452,11 +3833,11 @@ export type TechConnection = {
 
 export type TechCreateInput = {
   createdAt?: InputMaybe<Scalars['DateTime']>;
-  icon?: InputMaybe<AssetCreateOneInlineInput>;
+  icon: AssetCreateOneInlineInput;
   knowledge?: InputMaybe<Scalars['String']>;
   repositories?: InputMaybe<RepositoryCreateManyInlineInput>;
   slug: Scalars['String'];
-  title?: InputMaybe<Scalars['String']>;
+  title: Scalars['String'];
   updatedAt?: InputMaybe<Scalars['DateTime']>;
 };
 
@@ -4335,7 +4716,7 @@ export type GetRepositoryQueryVariables = Exact<{
 }>;
 
 
-export type GetRepositoryQuery = { __typename?: 'Query', repository?: { __typename?: 'Repository', title: string, slug: string, about: string, icon?: { __typename?: 'Asset', url: string } | null, desktopSite: Array<{ __typename?: 'Asset', url: string }>, mobileSite: Array<{ __typename?: 'Asset', url: string }>, techs: Array<{ __typename?: 'Tech', icon?: { __typename?: 'Asset', url: string } | null }> } | null };
+export type GetRepositoryQuery = { __typename?: 'Query', repository?: { __typename?: 'Repository', title: string, slug: string, about: { __typename?: 'AboutRepository', githubLink?: string | null, siteLink?: string | null, description?: string | null }, icon?: { __typename?: 'Asset', url: string } | null, desktopSite: Array<{ __typename?: 'Asset', url: string }>, mobileSite: Array<{ __typename?: 'Asset', url: string }>, techs: Array<{ __typename?: 'Tech', icon: { __typename?: 'Asset', url: string } }> } | null };
 
 export type GetSlugRepositoriesQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4347,19 +4728,19 @@ export type GetTechQueryVariables = Exact<{
 }>;
 
 
-export type GetTechQuery = { __typename?: 'Query', tech?: { __typename?: 'Tech', title?: string | null, knowledge?: string | null, icon?: { __typename?: 'Asset', url: string } | null, repositories: Array<{ __typename?: 'Repository', slug: string }> } | null };
+export type GetTechQuery = { __typename?: 'Query', tech?: { __typename?: 'Tech', title: string, knowledge?: string | null, icon: { __typename?: 'Asset', url: string }, repositories: Array<{ __typename?: 'Repository', slug: string }> } | null };
 
 export type GetTechsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetTechsQuery = { __typename?: 'Query', techs: Array<{ __typename?: 'Tech', title?: string | null, slug: string, icon?: { __typename?: 'Asset', url: string } | null }> };
+export type GetTechsQuery = { __typename?: 'Query', techs: Array<{ __typename?: 'Tech', title: string, slug: string, icon: { __typename?: 'Asset', url: string } }> };
 
 export type GetTitlesRepositoryQueryVariables = Exact<{
   slug?: InputMaybe<Scalars['String']>;
 }>;
 
 
-export type GetTitlesRepositoryQuery = { __typename?: 'Query', repository?: { __typename?: 'Repository', title: string, techs: Array<{ __typename?: 'Tech', title?: string | null }> } | null };
+export type GetTitlesRepositoryQuery = { __typename?: 'Query', repository?: { __typename?: 'Repository', title: string, techs: Array<{ __typename?: 'Tech', title: string }> } | null };
 
 
 export const GetRepositoryDocument = gql`
@@ -4367,7 +4748,11 @@ export const GetRepositoryDocument = gql`
   repository(where: {slug: $slug}) {
     title
     slug
-    about
+    about {
+      githubLink
+      siteLink
+      description
+    }
     icon {
       url
     }
