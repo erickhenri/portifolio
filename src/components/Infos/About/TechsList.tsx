@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { useGetTechsQuery } from "../../../graphql/genereted"
+import { useGetTechsQuery } from "@/graphql/genereted"
 import { Image } from "phosphor-react"
 
 export function TechsList() {

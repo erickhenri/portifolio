@@ -1,9 +1,10 @@
 import { ArrowLeft, Link } from "phosphor-react"
 import { useParams } from "react-router-dom"
-import { useGetRepositoryQuery } from "../graphql/genereted";
-import Loading from "../assets/loading.gif";
+import { useGetRepositoryQuery } from "@/graphql/genereted";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {Navigation, Pagination, Scrollbar } from "swiper";
+
+import Loading from "@/assets/loading.gif";
 
 import 'swiper/css';
 import 'swiper/css/navigation';

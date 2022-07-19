@@ -1,4 +1,4 @@
-import { TechsList } from "./TechsList"
+import { TechsList } from "@/components/Infos/About/TechsList";
 
 export function About() {
 

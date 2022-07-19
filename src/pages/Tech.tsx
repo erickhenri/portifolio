@@ -1,7 +1,9 @@
 import { gql, useQuery } from "@apollo/client"
 import { ArrowLeft } from "phosphor-react"
 import { useParams } from "react-router-dom"
-import { RepositoryButton } from "../components/RepositoryButton"
+import { RepositoryButton } from "@/components/RepositoryButton"
+
+import Loading from "@/assets/loading.gif";
 
 const GET_TECH_QUERY = gql `
 query ($slug: String) {
@@ -39,6 +41,14 @@ export function Tech() {
             slug,
         }
     })
+
+    if(!data?.tech) {
+        return (
+            <div className="w-screen h-screen flex items-center justify-center dark:bg-gray-700">
+            <img src={Loading} alt="" className="w-24"/>
+        </div>
+        )
+    }   
 
     return (
         <div className="flex flex-col min-h-screen">

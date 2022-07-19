@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { List, Moon, Sun } from "phosphor-react";
 
-import { Menu } from "~/components/Menu";
-import { Footer } from "~/components/Footer";
+import { Menu } from "@/components/Menu";
+import { Footer } from "@/components/Footer";
 
-import Character from '~/assets/character.png';
-import { ApplyTheme } from "~/components/ApplyTheme";
+import Character from '@/assets/character.png';
+import { ApplyTheme } from "@/components/ApplyTheme";
 
 export function Home() {
 	const [menuOpen, setMenuOpen] = useState(false);
