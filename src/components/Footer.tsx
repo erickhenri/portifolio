@@ -9,7 +9,7 @@ export function Footer() {
                 </a>
             </li>
             <li className="md:opacity-50 md:hover:opacity-100 transition-opacity cursor-pointer">
-                <a  href="https://github.com/nodlic" target="_blank">
+                <a  href="https://github.com/erickhenri" target="_blank">
                     <GithubLogo size={32} weight="fill"/>
                 </a>
             </li>
